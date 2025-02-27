@@ -76,4 +76,17 @@ app.delete('/citas/:id', async (req, res) => {
   }
 });
 
-
+// DELETE doctor por ID
+app.delete('/doctores/:id', async (req, res) => {
+  const id = req.params.id;
+  try {
+    const result = await pool.query('DELETE FROM doctores WHERE Id = $1', [id]);
+    if (result.rowCount > 0) {
+      res.json({ message: 'Doctor eliminado correctamente' });
+    } else {
+      res.status(404).json({ message: 'Doctor no encontrado' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
