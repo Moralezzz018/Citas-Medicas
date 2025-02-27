@@ -13,11 +13,11 @@
 app.get('/', async (req, res) => {
   try {
     const result = await pool.query('SELECT NOW()');
-    res.json({ message: 'Servidor funcionando', time: result.rows[0] });
+    res.json({ message: 'Servidor funcionandopruebacitasmedicas', time: result.rows[0] });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
  });
  app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+  console.log(`Servidor corriendo en pruebacitasmedicsdfsdfas:${port}`);
  });
