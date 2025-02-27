@@ -21,3 +21,12 @@ app.get('/', async (req, res) => {
  app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
  });
+
+ app.get('/citas', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM citas');
+    res.json(result.rows);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
