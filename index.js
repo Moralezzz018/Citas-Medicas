@@ -21,3 +21,40 @@ app.get('/', async (req, res) => {
  app.listen(port, () => {
   console.log(`Servidor corriendo en pruebacitasmedicsdfsdfas:${port}`);
  });
+
+ app.get('/citas', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM citas');
+    res.json(result.rows);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/doctores', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM doctores');
+    res.json(result.rows);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/especialidades', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM especialidades');
+    res.json(result.rows);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/pacientes', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM pacientes');
+    res.json(result.rows);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
