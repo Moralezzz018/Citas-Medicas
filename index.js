@@ -3,6 +3,9 @@
  const { Pool } = require('pg');
  const app = express();
  const port = process.env.PORT || 3000;
+
+ app.use(express.json()); //JSON Parsing
+
  const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -57,4 +60,20 @@ app.get('/pacientes', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+// DELETE cita por ID
+app.delete('/citas/:id', async (req, res) => {
+  const id = req.params.id;
+  try {
+    const result = await pool.query('DELETE FROM citas WHERE Id = $1', [id]);
+    if (result.rowCount > 0) {
+      res.json({ message: 'Cita eliminada correctamente' });
+    } else {
+      res.status(404).json({ message: 'Cita no encontrada' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 
