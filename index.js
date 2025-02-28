@@ -121,7 +121,7 @@ app.delete('/pacientes/:id', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-=======
+
 //PUT
 
 app.put('/pacientes/:id', async (req, res) => {
@@ -206,16 +206,21 @@ app.post('/insertarEspecialidad', async (req, res) => {
   }
 });
 
+
 app.post('/insertarPaciente', async (req, res) => {
   const {nombre,edad,telefono,correo} = req.body; // Recibe datos desde el formulario
 
   try {
     const result = await pool.query(
-      `INSERT INTO "pacientes" ("nombre","edad","telefono","correo") VALUES ($1, $2, $3, $4) RETURNING *`,
+      `INSERT INTO "pacientes" ("nombre","edad","telefono","correo") VALUES ($1, $2, $3, $4) ON CONFLICT DO NOTHING RETURNING *`,
       [nombre, edad, telefono, correo]
   );
 
+    if (result.rows.length > 0) {
       res.status(201).json({ message: 'Paciente Guardada', articulo: result.rows[0] }); // esta parte de ultimo hace un refresh de los datos que se enviaron
+    } else {
+      res.status(409).json({ message: 'Paciente ya existe' });
+    }
   } catch (error) {
       res.status(500).json({ error: error.message });
   }
