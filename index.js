@@ -196,7 +196,7 @@ app.post('/insertarEspecialidad', async (req, res) => {
 
   try {
     const result = await pool.query(
-      `INSERT INTO "especialidades" ("nombre") VALUES ($1) RETURNING *`,
+      `INSERT INTO "especialidades" ("nombre") VALUES ($1) ON CONFLICT DO NOTHING RETURNING *`,
       [nombre]
   );
 
@@ -231,7 +231,7 @@ app.post('/insertarDoctor', async (req, res) => {
 
   try {
     const result = await pool.query(
-      `INSERT INTO "doctores" ("nombre","id_especialidad","telefono") VALUES ($1, $2, $3) RETURNING *`,
+      `INSERT INTO "doctores" ("nombre","id_especialidad","telefono") VALUES ($1, $2, $3) ON CONFLICT DO NOTHING RETURNING *`,
       [nombre, id_especialidad, telefono]
   );
 
