@@ -7,5 +7,5 @@ Uso y creación de métodos get, post, put, delete en un servidor de ubuntu
 
 <h3>Creación de métodos:</h3>
 Metodos GET:
-![](https://github.com/Moralezzz018/Citas-Medicas/blob/master/GET%20CITAS.png?raw=true)
+![Image](https://github.com/user-attachments/assets/60e04626-a2fd-48dd-8d12-587aedf506f1)
 
