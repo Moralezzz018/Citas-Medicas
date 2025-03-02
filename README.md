@@ -1,4 +1,4 @@
-## 🚀 PROYCTO WEB II
+## 🚀 PROYECTO WEB II
 <P>Este proyecto tiene como objetivo implementar y demostrar el uso de los métodos HTTP GET, POST, PUT y DELETE en base a un programa de citas medicas donde habrán tablas de citas, pacientes, especialidades y doctores en un servidor Ubuntu. A través de este proyecto interactuamos con una base de datos utilizando estos métodos desde un servidor basado en Linux.<P>
    
 ## 📌 Tabla de Contenido  
@@ -62,7 +62,7 @@
 ## 🛠PRUEBAS DE METODOS:
 <P>Para probar los metodos utilizaremos una aplicación llamada postman, por medio de la ip del servidor nos facilitará la aplicación y prueba de estos métodos, hay que tener en cuenta que cada método funciona diferente.</P>
 <ol>
-   <li>**GET:** Muestra los datos de la db</li>
+   <li>GET: Muestra los datos de la db</li>
    <li>POST: Agrega datos a la db</li>
    <li>PUT: Actualiza datos de una tabla</li>
    <li>DELETE: Elimina datos en la db</li>
