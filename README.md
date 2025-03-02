@@ -1,8 +1,11 @@
-## 🚀 PROYECTO WEB II
+# 🚀 PROYECTO WEB II
 <P>Este proyecto tiene como objetivo implementar y demostrar el uso de los métodos HTTP GET, POST, PUT y DELETE en base a un programa de citas medicas donde habrán tablas de citas, pacientes, especialidades y doctores en un servidor Ubuntu. A través de este proyecto interactuamos con una base de datos utilizando estos métodos desde un servidor basado en Linux.<P>
    
 ## 📌 Tabla de Contenido  
-1. [Ubuntu Server](#ubuntu-server)  
+1. [Tecnologías Utilizadas](#tecnologias-utilizadas)
+   - [Ubuntu Server](#ubuntu-server)
+   - [Navicat](#navicat)
+   - [Postman](#postman)
 2. [Clonación de Repositorio](#clonacion-repositorio)  
 3. [Creación de Métodos](#creacion-de-metodos)  
    - [Métodos GET](#metodos-get)  
@@ -13,11 +16,16 @@
    - [Método GET](#metodo-get)  
    - [Método POST](#metodo-post)  
    - [Método PUT por ID](#metodo-put)  
-   - [Método DELETE por ID](#metodo-delete)    
+   - [Método DELETE por ID](#metodo-delete)
 
+## 📌TECNOLOGIAS UTILIZADAS
 ## 🎈UBUNTU SERVER
+![Ubuntu](https://th.bing.com/th/id/OIP.ToGzWE7YWgD4f88FmJPwqgAAAA?rs=1&pid=ImgDetMain)
+## 🎈NAVICAT
+![Navicat](https://th.bing.com/th/id/OIP.M-yeXl_2K0r-kY_W_-eriQAAAA?rs=1&pid=ImgDetMain)
+## 🎈POSTMAN
+![Postman](https://th.bing.com/th/id/OIP.p_mVTStF7NkQg0_rI2kkPwAAAA?w=364&h=325&rs=1&pid=ImgDetMain)
 
-![](https://th.bing.com/th/id/R.b557d982eceea6058a578ed297a605e1?rik=1v1t22xUKk9i%2fQ&pid=ImgRaw&r=0)
 ## 🔧CLONACION REPOSITORIO
 ### COMANDOS:
 - sudo apt install git (Instalar git en el servidor)
