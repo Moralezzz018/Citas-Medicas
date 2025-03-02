@@ -247,7 +247,7 @@ app.post('/insertarCita', async (req, res) => {
 
   try {
     const result = await pool.query(
-      `INSERT INTO "citas" ("id_paciente","id_doctor","fecha","hora","estado") VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+      `INSERT INTO "citas" ("id_paciente","id_doctor","fecha","hora","estado") VALUES ($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING RETURNING *`,
       [id_paciente,id_doctor,fecha,hora,estado]
   );
 
